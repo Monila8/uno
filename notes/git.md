@@ -15,14 +15,6 @@ function main() {}
 ```
 _fasdfasd_
 
-
-|header 1   | h2   | otra   | total   |   |
-|---|---|---|---|---|
-| a  | a  |d   |   |   |
-|  s |   | a  |   |   |
-|   f|  a |   |   |   |
-
-
 cd cual
 ls
 code .
@@ -33,6 +25,8 @@ npm instalo adentro
 npx instalo temporalmente en algún lado
 ## css
 3 main selectors:
-- tag
-- classes
-- id
+- tag --> body or ol or li
+- classes --> .btn 
+- id #gtp
+
+box model: margin, border, padding, content (IMPORTANT)
