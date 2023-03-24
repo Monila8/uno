@@ -1,0 +1,111 @@
+/* Only global styles */
+.btn {
+    color:brown
+}
+li {
+    color:crimson
+}
+
+body {
+    background-color:beige !important;
+}
+
+hgroup {
+    text-align: right;
+    padding-right: 16px;
+    border-right: 10px solid #00c8d7;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.title {
+    margin: 0;
+    font-weight: bold;  
+    font-size: 3rem
+}
+.title.purple {
+    color:purple;
+}
+h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem; 
+    color:dimgray; 
+}
+.intro{
+    font-family:arial;
+  }
+
+.tabla {
+  padding: 1em 1em 1em 1em;
+  margin: 1em 1em 1em 1em;
+  border: 5px solid rgb(128, 79, 7);
+  text-align:justify;
+  font-family: arial;
+  font-size: 0.9rem;
+  width: 80%;
+  height: 600px;
+  margin:0 auto; 
+}
+.marinos {
+    width: 250px;
+    padding: 1em 1em 0em 1em;
+  margin: 0em 1em 0em 1em;
+}
+.terrestres {
+    width: 250px;
+    padding: 1em 1em 0em 1em;
+  margin: 1em 1em 0em 1em;
+} 
+.aéreos {
+    width: 250px;
+    padding: 1em 1em 1em 1em;
+  margin: 1em 1em 0em 1em;
+}
+.agua {
+    font-size: 1.2rem;
+}
+.tierra {
+    font-size: 1.2rem;
+} 
+.aire {
+    font-size: 1.2rem;
+}
+
+.comments {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    font-size: 0.8rem;
+    letter-spacing: 0.8px;
+    font-family: arial;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: arial;
+}
+
+#about-me {
+    font-family: arial;
+    text-align: right;
+    display: block;
+}
+#contact {
+    font-family: arial;
+    text-align: right;
+    display: block;
+}
+
+.social .image{
+    width: 40px;
+    height: 40px;
+}
