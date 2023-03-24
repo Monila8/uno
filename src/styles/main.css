@@ -109,3 +109,19 @@ label {
     width: 40px;
     height: 40px;
 }
+
+.comment-container{
+    animation: slideUp 400ms ease;
+    position: relative;
+}
+
+@keyframes slideUp {
+    from {
+        top: 100px;
+        opacity: 0;
+    }
+    to {
+        top: 0px;
+        opacity: 1;
+    }
+}
