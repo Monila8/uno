@@ -1,4 +1,3 @@
-
 function fetchComments() {
   axios
     .get("http://localhost:3001/comments?active=true")//query params or string param
@@ -11,7 +10,7 @@ function fetchComments() {
 
       response.data.forEach((element) => {
         //if (element.active === true) {    
-          addTextNode(element.message, element.id);
+          addTextNode(element);
         //}
         
       });
@@ -28,10 +27,10 @@ sendBtn.addEventListener("click", function onClick(params) {
     .post("http://localhost:3001/comments", {
       message: comm.value,
       active: true,
-      //aquí debe estar el date y el update?
+      createdAt: new Date().toISOString(), 
+      updatedAt: new Date().toISOString(),
      })
     .then(function onSucces(params) {
-      alert("Mensaje enviado");
       comm.value = "";
       fetchComments();
     })
@@ -45,18 +44,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
   fetchComments();
 });
 
-function addTextNode(text, id) {
+function addTextNode(el) {
   const pContainer = document.createElement("p")
-  pContainer.classList.add("m-2");
+  pContainer.classList.add("m-2", "comment-container");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn-danger","btn", "m-2");
   deleteBtn.innerHTML = "Borrar";
   deleteBtn.onclick = function name(params) {
     axios
-      .patch(`http://localhost:3001/comments/${id}`, {active:false})
+      .patch(`http://localhost:3001/comments/${el.id}`, {
+        active: false,
+        updatedAt: new Date().toISOString(),
+      })
       .then(function name(response) {
-        alert("Mensaje eliminado");
         fetchComments();
       })
       .catch(function name(error) {
@@ -64,12 +65,15 @@ function addTextNode(text, id) {
       });
   };
 
-  const newtext = document.createTextNode(text)
+  const newtext = document.createTextNode(el.message)
+  const br= document.createElement('br');
   const resultsNode = document.querySelector(".results");
+  const dateText = document.createTextNode(`Fecha: ${new Date(el.createdAt).toLocaleString()} - Última actualización: ${new Date(el.updatedAt).toLocaleString()}`);
 
   pContainer.appendChild(newtext);
+  pContainer.appendChild(br); 
+  pContainer.appendChild(dateText);     
   pContainer.appendChild(deleteBtn);
-
   resultsNode.appendChild(pContainer);  
 }
 
